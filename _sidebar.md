@@ -1,0 +1,3 @@
+- [开始](/index.md)
+- [什么是 SEATiDE？](/seatide.md)
+- [服规](/rules.md)
