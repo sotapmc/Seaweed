@@ -7,3 +7,10 @@ body {
 .app-name {
     font-weight: bolder !important;
 }
+
+.markdown-section table {
+    display: inline-table !important;
+    margin: auto !important;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
