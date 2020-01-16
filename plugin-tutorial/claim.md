@@ -50,5 +50,5 @@
 - 添加领地成员
 - ...还有更多！
 
-除此之外，还有一些实用的领地指令。详情可以阅读下一篇[插件指令列表#RedProtect](/plugin-tutorial/player-commands.md#RedProtect)。
+除此之外，还有一些实用的领地指令。详情可以阅读下一篇[插件指令列表#领地](/plugin-tutorial/player-commands.md#领地)。
 
