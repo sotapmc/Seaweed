@@ -25,7 +25,7 @@
 领地所有者(选填)
 ```
 
-![2020-01-16_15.05.14.png](https://i.loli.net/2020/01/16/HTzwQXq1lc8bi4R.png)
+![2020-01-16_15.05.14.png](https://i.loli.net/2020/01/16/xHsUCyF1YLEKdTa.png)
 
 然后点击「完成」关闭木牌编辑页面，领地就创建好了！
 
