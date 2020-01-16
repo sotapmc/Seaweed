@@ -1,3 +1,10 @@
 - [开始](/index.md)
 - [什么是 SEATiDE？](/seatide.md)
 - [服规](/rules.md)
+- [服务器公共传送点一览](/warps.md)
+- 插件使用
+    - [圈地教程](/plugin-tutorial/claim.md)
+    - [玩家指令列表](/plugin-tutorial/player-commands.md)
+- 管理
+    - [LuckPerms 基础](/luckperms/main.md)
+    - [Nucleus 基础](/nucleus/main.md)
