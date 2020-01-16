@@ -6,5 +6,5 @@
     - [圈地教程](/plugin-tutorial/claim.md)
     - [玩家指令列表](/plugin-tutorial/player-commands.md)
 - 管理
-    - [LuckPerms 基础](/luckperms/main.md)
-    - [Nucleus 基础](/nucleus/main.md)
+    - [LuckPerms 基础](/management/luckperms-main.md)
+    - [Nucleus 基础](/management/nucleus-main.md)
