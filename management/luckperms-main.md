@@ -84,11 +84,13 @@ LuckPerms 中的控制器可以通过输入 `/lp group` 或 `/lp user` 查看，
 /lp <object> <object-name> permission set <node> [true|false]
 ```
 
-其中 `<node>` 为权限的节点名称，例如 `nucleus.vanish.base` 代表 `/vanish` 指令的基础权限，等等。每一个插件均会列出自己的插件列表，包括 Sponge、LuckPerms 本身。
+其中 `<node>` 为权限的节点名称，例如 `nucleus.vanish.base` 代表 `/vanish` 指令的基础权限，等等。每一个插件一般都会在自己的 Wiki 或发布帖上列出自己的权限节点列表，包括 Sponge、LuckPerms 本身。
 
 最后的 `[true|false]` 为该节点的状态，只有两种，即 `true`（启用）或 `false`（禁用）。当该权限没有被插件作者默认设置，且尚未被配置时，它默认为 `false`。
 
 ?> 😎 如果最后的状态留空，那么会默认设置为 `true`，如果想要大范围地启用指令，可以留空不打 `true` 以节省时间。
+
+?> 👀 一个个浏览节点文档不是一个好主意。我们也可以通过 Tab 补全来了解有哪些节点。一般来说，我们可以通过英文的字面意思猜出该节点的用途。例如，键入 `nucleus.r` 后 <kbd>Tab<kdb> 即可显示所有 Nucleus 插件下以 r 开头的权限节点。
 
 ### 继承 `parent`
 
