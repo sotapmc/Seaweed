@@ -142,7 +142,7 @@ thisisaprefix Subilan: blablabla
 |指令|解释|
 |:-:|:-:|
 |`/kit setcooldown <name> <time>`|指定某个礼包的冷却时长<sup>1</sup>|
-|`/kit onetime <name> <true|false>`|设置礼包是否为一次性（一个玩家只能领取一次）<sup>2</sup>|
+|`/kit onetime <name> <true\|false>`|设置礼包是否为一次性（一个玩家只能领取一次）<sup>2</sup>|
 |`/kit cost <name> <price>`|设置礼包价格（付费礼包）|
 |`/kit edit <name>`|打开箱子 GUI 编辑某一礼包的内容|
 |`/kit set <name>`|把自己当前背包的内容设置成一个现有礼包的内容（也就是修改）|
