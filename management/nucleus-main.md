@@ -116,3 +116,77 @@ thisisaprefix Subilan: blablabla
 ```
 
 这样显示出来的结果才是 <span style="background-color: black"><span style="color:white">[</span><span style="color:chartreuse">我是称号</span><span style="color:white">]</span></span>，而 `[&a我是称号]` 显示的却是 <span style="background-color: black"><span style="color:white">[</span><span style="color:chartreuse">我是称号]</span></span>
+
+## 礼包
+
+!>  如果您正在寻找**如何使用礼包**，请移步[这里](/player/basic-commands.md)
+
+礼包也是 Nucleus 的组件之一。不同于传统礼包插件，Nucleus 的礼包不需要通过修改配置文件来实现，而是只需要在服务器内执行相应指令即可。
+
+### 如何创建礼包
+
+有两种办法，可以完全按照自己的意愿选择。
+
+#### 箱子风格
+
+执行指令 `/kit create <name>`，其中 `<name>` 为创建的礼包名称。执行以后，将会打开一个类似于箱子的 GUI（就相当于是打开箱子以后的画面），此时向里面放入礼包内容即可，退出以后，礼包将会被保存。
+
+#### 直接创建
+
+执行指令 `/clear` 清空自己的现有背包。然后在自己的背包里放入礼包的内容，需要注意的是放入物品的附魔、数量、名称等也会被记入到礼包里。放入完毕后，执行 `/kit add <name>` 即可创建一份礼包。
+
+### 礼包指令
+
+单单创建礼包是远远不够的，我们还需要一些拓展。以下列出了较为完整的礼包指令用法和解释。
+
+|指令|解释|
+|:-:|:-:|
+|`/kit setcooldown <name> <time>`|指定某个礼包的冷却时长<sup>1</sup>|
+|`/kit onetime <name> <true|false>`|设置礼包是否为一次性（一个玩家只能领取一次）<sup>2</sup>|
+|`/kit cost <name> <price>`|设置礼包价格（付费礼包）|
+|`/kit edit <name>`|打开箱子 GUI 编辑某一礼包的内容|
+|`/kit set <name>`|把自己当前背包的内容设置成一个现有礼包的内容（也就是修改）|
+|`/kit remove <name>`|删除礼包|
+|`/kit resetusage <player> <name>`|立即撤销某个玩家的某个礼包的冷却时间或者一次性<sup>3</sup>|
+|`/kit command add <name> <command>`|在礼包中附加指令，在玩家兑换时执行<sup>4</sup>|
+|`/kit command <name>`|查看某个礼包所包含的附加指令<sup>5</sup>|
+|`/kit command remove <name> <index>`|删除某个礼包的附加指令<sup>6</sup>|
+|`/kit setfirstlogin <name> true`|将某个已设置好的礼包设为新人礼包，新人进入服务器自动发放|
+
+#### 注释
+
+1. 冷却时长是指领取过一遍后需要等待多少时间才能再次领取。
+    - `<time>` 参数的格式为 `数字+单位`
+        - 例如 `10s` 代表 10 seconds（十秒），`20min` 代表 20 minutes（二十分钟），`30h` 代表 30 hours（三十小时），`40d` 代表 40 days（四十天）。**请不要使用年，因为服务器根本没有可能活那么久！**
+2. 其中，最后一个参数 `<true|false>` 中，`true` 代表启用，`false` 代表禁用。
+    - 例如 `/kit onetime example true` 代表将名为 `example` 的礼包设置为一次性的。
+    - 例如 `/kit onetime example false` 代表取消名为 `example` 的礼包的一次性，使它可以被重复领取。
+3. 执行该指令后，玩家可以立即领取这个礼包而无需等待。对于那些玩家已经领取过而导致失效的一次性礼包，在执行指令以后仍然可以再次领取。
+4. 参数 `<command>` 就是指令的内容，可以在指令中夹杂 `{{player}}` 来代表玩家的名称。 
+    - 例如 `/kit command add example suicide` 代表当玩家兑换 `example` 礼包的时候，自动执行 `/suicide`（自杀）。
+    - 例如 `/kit command add example broadcast {{player}} 兑换了一个礼包。` 代表当玩家兑换 `example` 礼包的时候，自动执行 `/broadcast {{player}} 兑换了一个礼包。`，此时 `{{player}}` 会被自动替换为兑换礼包玩家的名称。因此此时公屏上会出现 `xxx 兑换了一个礼包。` 字样。
+        - 注释：`/broadcast` 是广播指令。
+5. 执行以后会出现一个列表，里面就是附加指令。点击前面的 `X` 可以直接删除某个指令。指令前面黄色的数字序号就是 `index`（见注释 6）。
+6. 删除时需要指定 `index`。`index` 可以在 `/kit command <name>` 中看到，例如 `/kit command remove example 1` 代表删除 `example` 礼包中序号为 1 的指令。
+
+### 礼包权限
+
+!> 阅读本节内容需要 LuckPerms 基础。如果您仍然不熟悉，可以跳转到[这里](/management/luckperms-main.md)。
+
+在创建礼包的同时，我们还可以指定哪些玩家可以使用礼包。
+
+每个礼包都有一个独立的权限节点：`nucleus.kits.<name>`，其中 `<name>` 是礼包的名称。如果我们设定了一个 VIP 专属礼包，那么可以通过如下指令将这个礼包授予 vip 组。
+
+```minecraft
+/lp group vip permission set nucleus.kits.vip
+```
+
+如果想要让某个玩家或组获得所有礼包的权限，那么可以给予 `nucleus.kits.*` 也就是 `nucleus.kits`。
+
+如果要禁止玩家领取任何礼包，可以
+
+- 撤销 `nucleus.kits.*` 权限：`/lp user <name> permission set nucleus.kits.* false`
+- 或者撤销 `nucleus.kits.base` 权限：`/lp user <name> permission set nucleus.kits.base false`
+
+其中前者是撤销对所有**现有**礼包的访问权限，在这之后添加的礼包仍然可以领取。后者是撤销使用 `/kits` 指令的权限，这样无论什么时候创建的礼包都无法领取。
+ 
