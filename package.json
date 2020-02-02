@@ -1,0 +1,29 @@
+{
+  "name": "seaweed",
+  "version": "0.1.9",
+  "description": "The official SEATiDE wiki project.",
+  "main": "index.html",
+  "dependencies": {
+    "docsify": "^4.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sotapmc/Seaweed.git"
+  },
+  "keywords": [
+    "wiki",
+    "seatide",
+    "sotap",
+    "minecraft"
+  ],
+  "author": "Subilan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sotapmc/Seaweed/issues"
+  },
+  "homepage": "https://github.com/sotapmc/Seaweed#readme"
+}
